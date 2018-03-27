@@ -33,8 +33,10 @@ namespace U2KeeganTXTMSG
         private void btnTranslate_Click(object sender, RoutedEventArgs e)
         {
             string strInput = txbInput.Text;
+            string strOutput = strInput.Substring(0, strInput.IndexOf("TTYL") + 4);
 
-            strInput = strInput.Replace("CU", "see you").Replace(":-)", "I'm happy").Replace(":-(", "I'm unhappy");
+            strOutput = strOutput.Replace("CUZ", " because ").Replace(":-)", " I'm happy ").Replace(":-(", " I'm unhappy ").Replace(";-)", " wink ").Replace(":-P", " stick my tongue out ").Replace("(~.~)", " sleepy ").Replace("TA", " totally awesome ").Replace("CCC", " Canadian Computation Competition ").Replace("CU", " see you ").Replace("YW", " you're welcome ").Replace("TTYL", " talk to you later").Replace("TY", " thank you ");
+            txbOutput.Text = strOutput;
         }
     }
 }
