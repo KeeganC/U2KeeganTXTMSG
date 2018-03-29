@@ -1,4 +1,4 @@
-﻿/*Keegan Chan
+/*Keegan Chan
  * 3 26 2018
  * U2KeeganTXTMSG
  * Translates leetspeak
@@ -32,11 +32,16 @@ namespace U2KeeganTXTMSG
 
         private void btnTranslate_Click(object sender, RoutedEventArgs e)
         {
+            //turn input into a string
             string strInput = txbInput.Text;
+            //make string end at TTYL
             string strOutput = strInput.Substring(0, strInput.IndexOf("TTYL") + 4);
 
+            //replace short forms
             strOutput = strOutput.Replace("CUZ", " because ").Replace(":-)", " I'm happy ").Replace(":-(", " I'm unhappy ").Replace(";-)", " wink ").Replace(":-P", " stick my tongue out ").Replace("(~.~)", " sleepy ").Replace("TA", " totally awesome ").Replace("CCC", " Canadian Computation Competition ").Replace("CU", " see you ").Replace("YW", " you're welcome ").Replace("TTYL", " talk to you later").Replace("TY", " thank you ");
+            //output translated text
             txbOutput.Text = strOutput;
         }
     }
 }
+
